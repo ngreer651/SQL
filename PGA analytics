@@ -1,0 +1,102 @@
+# For this project, I googled the top 15 ranked professional golfers.
+# Then I created a table to insert information about each golfer.
+# Finally, I performed analyitcs on the data using SQL.
+
+CREATE TABLE golfers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    college TEXT,
+    pro_debut INTEGER,
+    pga_wins INTEGER);
+    
+    "For this project I googled the top 15 professional golfers in the PGA and listed some information about each player"
+    
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("john rahm", 27, "arizona state university", 2016, 6);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("colin morikawa", 25, "university of california berkley", 2019, 5);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("viktor hovland", 24, "oklahoma state university", 2019, 3);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("patrick cantlay", 29, "ucla", 2012, 6);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("scottie scheffler", 25, "university of texas", 2018, 2);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("cameron smith", 28, "null", 2013, 5);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("rory mcllroy", 32, "null", 2007, 20);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("justin thomas", 28, "university of alabama", 2013, 14);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("xander schauffele", 28, "san diego state university", 2015, 4);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("dustin johnson", 37, "coastal carolina university", 2007, 24);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("hideki matsuyama", 30, "tohoku fukushi university", 2013, 8);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("bryson dechambeau", 28, "souther methodist university", 2016, 8);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("louis oosthuizen", 39, "null", 2002, 1);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("jordan spieth", 28, "university of texas", 2012, 12);
+INSERT INTO golfers (name, age, college, pro_debut, pga_wins)
+VALUES ("tyrrell hatton", 30, "null", 2011, 1);
+
+CREATE TABLE fedex_cup  (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    rank INTEGER,
+    points INTEGER,
+    avg_score INTEGER);
+    
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (16, 666, 70.25);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (13, 730, 69.58);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (6, 1006, 70.2);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (17, 661, 69.94);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (1, 1620, 69.87);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (2, 1354, 69.27);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (18, 656, 69.88);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (25, 583, 69.88);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (46,363,70.49);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (142, 123, 71.06);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (3, 1321, 70.02);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (206, 34, 73.13);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (130, 152, 70.21);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (36, 423, 71.54);
+INSERT INTO fedex_cup (rank, points, avg_score)
+VALUES (55, 333, 70.28);
+
+
+SELECT * FROM golfers;
+
+SELECT golfers.name, golfers.pga_wins, fedex_cup.rank
+FROM golfers
+JOIN fedex_cup
+ON golfers.id = fedex_cup.id
+ORDER BY rank ;
+
+SELECT golfers.name, golfers.pro_debut, fedex_cup.points AS fedex_cup_points
+FROM golfers
+JOIN fedex_cup
+ON golfers.id = fedex_cup.id
+WHERE points > 500
+ORDER BY points DESC;
+
+
+
+    
+    
