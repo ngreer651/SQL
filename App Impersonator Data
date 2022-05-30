@@ -1,0 +1,65 @@
+# For this project, I created fake data to impersonate a fitness app.
+# Then I created a table to insert the fitness data into.
+# Finally, I performed analytics on the data using SQL.
+
+CREATE TABLE profile (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    First_name TEXT,
+    Last_name text,
+    age INTEGER,
+    height INTEGER,
+    weight INTEGER);
+    
+INSERT INTO profile (First_name, Last_name, age, height, weight) VALUES ("mary", "jane", 45, 5.7, 147);
+INSERT INTO profile (First_name, Last_name, age, height, weight) VALUES ("ricky", "bobby", 33, 6.8, 220);
+INSERT INTO profile (First_name, Last_name, age, height, weight) VALUES ("freddie", "mercury", 29, 5.11, 189);
+INSERT INTO profile (First_name, Last_name, age, height, weight) VALUES ("jamie", "rain", 24, 5.6, 127);
+INSERT INTO profile (First_name, Last_name, age, height, weight) VALUES ("riley", "bizzy", 19, 5.10, 183);
+
+    CREATE TABLE meal_plan (
+    person_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    breakfast TEXT,
+    lunch TEXT,
+    dinner TEXT,
+    snacks TEXT,
+    total_calories INTEGER,
+    calorie_surplus_deficit TEXT);
+    
+INSERT INTO meal_plan (breakfast, lunch, dinner, snacks, total_calories, calorie_surplus_deficit) VALUES ("yogurt, oatmeal, banana,","pizza, chips,", "steak, asparagus, brown rice,", "ice cream, twix bar,", "1476", "deficit");
+INSERT INTO meal_plan (breakfast, lunch, dinner, snacks, total_calories, calorie_surplus_deficit) VALUES ("french toast, mixed fruit,","chicken, white rice,", "lasagna, garlic bread,", "cheeze its, snickers bar,", "1987", "deficit");
+INSERT INTO meal_plan (breakfast, lunch, dinner, snacks, total_calories, calorie_surplus_deficit) VALUES ("cookie crisp cereal, toast,","hamburger, fries,", "steak asparagus rice", "ice cream", "2236", "surplus");
+INSERT INTO meal_plan (breakfast, lunch, dinner, snacks, total_calories, calorie_surplus_deficit) VALUES ("omelette, hashbrowns, toast,","BLT, tater tots,", "tacos, chips & queso,", "churros,", "2010", "surplus");
+INSERT INTO meal_plan (breakfast, lunch, dinner, snacks, total_calories, calorie_surplus_deficit) VALUES ("avocado toast, grapefruit,","gyro, fries,", "enchiladas, mexican rice,", "ice cream,", "2178", "surplus");
+
+SELECT * FROM profile;
+SELECT * FROM meal_plan;
+SELECT * FROM meal_plan WHERE total_calories > 2000;
+
+UPDATE meal_plan set calorie_surplus_deficit = "deficit" WHERE person_id = 4;
+SELECT * FROM meal_plan;
+SELECT * FROM  meal_plan WHERE person_id LIKE "%4%";
+
+SELECT * FROM profile;
+DELETE FROM profile WHERE first_name LIKE "%freddie%";
+SELECT * FROM profile;
+
+DELETE FROM profile WHERE age LIKE "%45%";
+SELECT * FROM profile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
